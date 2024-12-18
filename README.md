@@ -9,6 +9,7 @@ A TypeScript application that fetches and displays tasks from a Jira board with 
 - ✨ Type-safe implementation using TypeScript
 - 🔐 Secure authentication using Jira API tokens
 - 🚀 Modern ES Modules and async/await patterns
+- 📱 Telegram integration for task notifications
 
 ## Prerequisites
 
@@ -79,6 +80,8 @@ src/
 | JIRA_API_TOKEN | Your Jira API token |
 | JIRA_DOMAIN | Your Jira domain (e.g., company.atlassian.net) |
 | JIRA_BOARD_ID | The ID of your Jira board |
+| TELEGRAM_BOT_TOKEN | Your Telegram bot token |
+| TELEGRAM_CHAT_ID | Your Telegram chat ID for notifications |
 
 ## Contributing
 
