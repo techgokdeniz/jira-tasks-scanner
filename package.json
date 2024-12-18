@@ -10,10 +10,12 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@types/node-telegram-bot-api": "^0.64.7",
     "axios": "^1.6.2",
-    "dotenv": "^16.3.1",
     "chalk": "^5.3.0",
-    "fs-extra": "^11.2.0"
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.2.0",
+    "node-telegram-bot-api": "^0.66.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

@@ -1,8 +1,10 @@
-export interface Config {
+export interface Environment {
   email: string;
   apiToken: string;
   domain: string;
   boardId: string;
+  telegramBotToken: string;
+  telegramChannelId: string;
 }
 
 export interface FormattedTask {
@@ -12,4 +14,5 @@ export interface FormattedTask {
   priority: string;
   assignee: string;
   type: string;
+  url: string;
 }

@@ -3,9 +3,9 @@ import { jiraApiService } from 'services/api';
 import { formatTask, displayTasks } from 'utils/taskFormatter';
 import { TaskComparer, displayNewTasks } from 'utils/taskComparer';
 import { StorageService } from 'services/storage';
+import { TelegramService } from 'services/telegram';
 import type { FormattedTask } from 'types/config';
 import chalk from 'chalk';
-
 
 const CHECK_INTERVAL = 5 * 60 * 1000;
 const taskComparer = new TaskComparer();
@@ -54,6 +54,11 @@ async function checkForNewTasks(): Promise<void> {
 
     const newTasks = await taskComparer.findNewTasks(currentTasks);
     displayNewTasks(newTasks);
+
+    const telegramService = TelegramService.getInstance();
+    for (const task of newTasks) {
+      await telegramService.sendNewTaskNotification(task);
+    }
   } catch (error) {
     console.error(
       chalk.red(

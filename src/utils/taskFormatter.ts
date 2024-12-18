@@ -1,5 +1,6 @@
 import type { JiraIssue } from "types/jira";
 import type { FormattedTask } from "types/config";
+import { environment } from "../config/environment";
 import chalk from "chalk";
 
 export function formatTask(issue: JiraIssue): FormattedTask {
@@ -10,6 +11,7 @@ export function formatTask(issue: JiraIssue): FormattedTask {
     priority: issue.fields.priority?.name ?? "No Priority",
     assignee: issue.fields.assignee?.displayName ?? "Unassigned",
     type: issue.fields.issuetype.name,
+    url: `https://${environment.domain}/browse/${issue.key}`
   };
 }
 
